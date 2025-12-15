@@ -1,0 +1,109 @@
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+body {
+  margin: 0 auto;
+}
+p {
+  font-family: "pretendard";
+  font-size: 20px;
+  font-weight: 500;
+}
+.green-box {
+  padding: 30px;
+  background-color: rgba(29, 218, 135, 0.3);
+  border: 1px solid #0b7d54;
+  border-radius: 50px;
+  box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}
+.text-wrap {
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 20;
+}
+.title {
+  font-family: "pretendard";
+  font-weight: 800;
+  font-size: 30px;
+}
+.header-container {
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 301px;
+  grid-template-rows: 1fr 1fr;
+  gap: 32px;
+  width: 1280px;
+  height: 100%;
+}
+.main-container {
+  display: grid;
+  width: 1280px;
+  height: 100%;
+}
+/*------------------------------------------------------------------------------------------------------------*/
+.resume {
+  position: relative;
+}
+.resume > h1 {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 150px);
+  font-family: "pretendard";
+  font-weight: 800;
+  font-size: 300px;
+  letter-spacing: 3px;
+  text-align: center;
+  color: rgba(11, 125, 84, 0.1);
+  z-index: -1;
+  /* text-shadow: -4px -4px 4px rgba(0, 0, 0, 0.25); */
+}
+.resume > h2 {
+  position: absolute;
+  bottom: 0;
+  color: rgba(11, 125, 84, 0.05);
+}
+.name-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 170px;
+  text-align: right;
+}
+.name-box > h3 {
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.info-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 20px;
+}
+.education-box {
+  height: 170px;
+}
+
+.education-box > p {
+  text-align: right;
+  font-family: "pretendard";
+  font-size: 20px;
+  font-weight: 500;
+}
