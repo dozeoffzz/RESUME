@@ -38,19 +38,22 @@
   font-family: "Zen SERIF";
   src: url(./ZEN-SERIF-TTF-Regular.ttf) format(truetype);
 }
-
+* {
+  cursor: url();
+}
 p {
-  font-family: "pretendard";
+  font-family: "zen serif" "pretendard";
   font-size: 20px;
   font-weight: 500;
 }
 .container {
+  background-color: #f9f9f6;
   margin: 0 auto;
-  max-width: 1980px;
+  max-width: 1820px;
   padding: 32px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(456px, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-rows: 200px auto;
   gap: 32px;
   height: 100%;
 }
@@ -76,41 +79,72 @@ p {
 }
 .portfolio-box {
   grid-column: 3/4;
+  grid-row: 5/6;
 }
 .green-box {
   display: flex;
   flex-direction: column;
   padding: 30px;
-  background-color: rgba(29, 218, 135, 0.3);
   border: 1px solid #0b7d54;
   border-radius: 50px;
-  box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 10px 10px 10px 0 rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
   width: 100%;
+  background: rgba(29, 218, 135, 0.05);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  position: relative;
+  overflow: hidden;
+  transform: scale(1);
+  transition: transform 0.3s;
+}
+.green-box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  transition: none;
+}
+@keyframes shine {
+  from {
+    left: -120%;
+  }
+  to {
+    left: 120%;
+  }
 }
 .text-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #1f2a44;
   position: relative;
   font-family: "pretendard";
   font-weight: 500;
   font-size: 20;
+  text-align: center;
 }
 .title {
-  font-family: "pretendard";
+  font-family: "Zen SERIF";
   font-weight: 800;
   font-size: 30px;
-  background-color: rgba(29, 218, 135, 0.3);
-  box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
-  border: 1px solid #0b7d54;
+  border-left: 1px solid #fafafa;
+  border-right: 1px solid #fafafa;
   width: 100%;
   height: 30px;
   border-radius: 50px;
   margin-bottom: 30px;
   text-align: center;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.6);
 }
 /*------------------------------------------------------------------------------------------------------------*/
 .resume {
+  background: linear-gradient(to bottom, #1f3d36, #f9f9f6);
   width: 100vw;
   max-width: 100vw;
   overflow: hidden;
@@ -120,6 +154,8 @@ p {
   justify-content: space-between;
   align-items: center;
   position: relative;
+  filter: blur(3px);
+  transition: filter 0.3s ease;
 }
 @keyframes slidein {
   from {
@@ -138,11 +174,9 @@ p {
   font-size: 300px;
   letter-spacing: 200px;
   text-align: center;
-  color: rgba(11, 125, 84, 0.2);
-  z-index: -1;
+  color: rgba(155, 165, 161, 0.2);
   white-space: nowrap;
   animation: slidein 10s linear infinite alternate;
-  /* text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25); */
 }
 .resume > h2 {
   display: flex;
@@ -153,8 +187,7 @@ p {
   font-size: 300px;
   letter-spacing: 200px;
   text-align: center;
-  color: rgba(11, 125, 84, 0.05);
-  z-index: -1;
+  color: rgba(6, 70, 46, 0.05);
   white-space: nowrap;
   animation: slidein 7s linear infinite alternate;
 }
@@ -204,33 +237,37 @@ p {
   grid-column: 1/2;
   grid-row: 1/2;
   text-align: right;
-  /* height: 400px; */
 }
 .info-text > h3 {
   font-family: "pretendard";
   font-weight: 500;
   font-size: 30px;
   margin-bottom: 10px;
+  text-align: center;
+  font-family: "zen serif";
 }
 .info-text {
   display: flex;
   flex-direction: column;
   gap: 10px;
   font-size: 20px;
+  text-align: center;
+  font-family: "zen serif";
 }
 .education-box {
   grid-column: 2/3;
-  /* height: 400px; */
 }
 .education-text {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 .education-text > p {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: right;
+  font-family: "zen serif";
 }
 .photo-box {
   display: flex;
@@ -241,28 +278,62 @@ p {
 .photo-box > img {
   border-radius: 50px;
 }
-.aboutme-box > p {
+.profile {
+  width: 100%;
+}
+.aboutme-text-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  gap: 20px;
+  font-family: "zen serif";
+}
+.aboutme-me {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+  color: #1f2a44;
+  font-family: "zen serif";
+  line-height: 1.2em;
 }
-.aboutme-box > strong {
+.aboutme-strong {
   font-size: 20px;
   color: rgba(196, 15, 18, 1);
   text-align: center;
+  font-family: "zen serif";
 }
-.text-wrap > li {
+.years {
+  text-align: center;
+  font-weight: 800;
+  border-left: 1px solid #0b7d54;
+  border-right: 1px solid #0b7d54;
+  border-radius: 20px;
+  font-size: 20px;
+  font-family: "zen serif";
+}
+.experience-item {
   font-size: 20px;
   text-align: center;
+  color: #1f2a44;
+  font-family: "zen serif";
 }
-.experience-box > strong {
+.experience-strong {
   color: rgba(196, 15, 18, 1);
   font-size: 20px;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 18px;
+  font-family: "zen serif";
+}
+.license-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 20px;
+  color: #1f2a44;
+  text-align: center;
+  font-family: "zen serif";
 }
 .skill-container {
   display: flex;
@@ -275,87 +346,153 @@ p {
 }
 .skill-item {
   font-size: 20px;
-  margin-right: 50px;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: center;
+  color: #1f2a44;
+  font-family: "zen serif";
 }
 .skill-per-box {
   padding: 2px;
-  position: relative;
-  background-color: rgba(136, 136, 136, 0.5);
+  border-left: 1px solid #0b7d54;
+  border-right: 1px solid #0b7d54;
   border-radius: 20px;
-  min-width: 200px;
   width: 100%;
   height: 30px;
   overflow: hidden;
 }
-.skill-per-ph {
-  width: 70%;
-  height: 30px;
+.skill-per {
+  position: relative;
+  height: 100%;
   background-color: #1dda87;
   border-radius: 20px;
+}
+.skill-per > span {
+  font-family: "ZEN SERIF";
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translate(-50%, -50%);
+  color: #1f2a44;
+}
+.skill-per-ph {
+  width: 0%;
+  transition: width 0.7s;
+}
+.skill-box:hover .skill-per-ph {
+  width: 70%;
 }
 .skill-per-ai {
+  width: 0%;
+  transition: width 0.7s;
+}
+.skill-box:hover .skill-per-ai {
   width: 70%;
-  height: 30px;
-  background-color: #1dda87;
-  border-radius: 20px;
 }
 .skill-per-figma {
+  width: 0%;
+  transition: width 0.3s;
+}
+.skill-box:hover .skill-per-figma {
   width: 30%;
-  height: 30px;
-  background-color: #1dda87;
-  border-radius: 20px;
 }
 .skill-per-html {
+  width: 0%;
+  transition: width 0.6s;
+}
+.skill-box:hover .skill-per-html {
   width: 60%;
-  height: 30px;
-  background-color: #1dda87;
-  border-radius: 20px;
 }
 .skill-per-css {
+  width: 0%;
+  transition: width 0.4s;
+}
+.skill-box:hover .skill-per-css {
   width: 40%;
-  height: 30px;
-  background-color: #1dda87;
-  border-radius: 20px;
 }
 .skill-per-js {
   width: 0%;
-  height: 30px;
-  background-color: #1dda87;
-  border-radius: 20px;
 }
 .skill-per-react {
   width: 0%;
-  height: 30px;
-  background-color: #1dda87;
-  border-radius: 20px;
 }
 .contact-text-container {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
 }
 .contact-text-wrap {
   display: flex;
   flex: 1;
   justify-content: space-between;
+  color: #1f2a44;
+  font-family: "zen serif";
+}
+.portfolio-box {
+  cursor: pointer;
+}
+.portfolio-box > span {
+  font-family: "zen serif";
+  font-size: 30px;
+  font-weight: 800;
+  color: #1f2a44;
+  text-align: center;
+}
+@media screen and (min-width: 1280px) {
+  .text-wrap {
+    filter: blur(6px);
+    transition: filter 0.3s ease;
+  }
+  .contact-text-container {
+    filter: blur(6px);
+    transition: filter 0.3s ease;
+  }
+  .profile {
+    filter: blur(6px);
+    transition: filter 0.3s ease;
+  }
+  .aboutme-me {
+    filter: blur(6px);
+    transition: filter 0.3s ease;
+  }
+  .aboutme-strong {
+    filter: blur(6px);
+    transition: filter 0.3s ease;
+  }
+  .experience-item {
+    filter: blur(6px);
+    transition: filter 0.3s ease;
+  }
+  .experience-strong {
+    filter: blur(6px);
+    transition: filter 0.3s ease;
+  }
+  .result {
+    filter: blur(6px);
+    transition: filter 0.3s ease;
+  }
+  .skill-item {
+    filter: blur(6px);
+    transition: filter 0.3s ease;
+  }
+  .skill-per-box {
+    filter: blur(6px);
+    transition: filter 0.3s ease;
+  }
+  .license-item {
+    filter: blur(6px);
+    transition: filter 0.3s ease;
+  }
+  .portfolio-box > span {
+    filter: blur(6px);
+    transition: filter 0.3s ease;
+  }
+  .skill-per-ph {
+    width: 30px;
+  }
 }
 
 @media screen and (max-width: 1279px) {
-  .resume > h1 {
-    display: hidden;
-  }
-  .resume > h2 {
-    display: hidden;
-  }
-  .resume > p {
-    display: hidden;
-  }
-  .resume > p {
-    display: hidden;
-  }
-  .resume > p {
-    display: hidden;
-  }
   .text-wrap {
     font-size: 20px;
   }
@@ -368,16 +505,16 @@ p {
   .info-text {
     font-size: 20px;
   }
-  .aboutme-box > p {
+  .aboutme-me {
     font-size: 20px;
   }
-  .aboutme-box > strong {
+  .aboutme-strong {
     font-size: 20px;
   }
-  .text-wrap > li {
+  .experience-item {
     font-size: 20px;
   }
-  .experience-box > strong {
+  .experience-strong {
     font-size: 20px;
   }
   .container {
@@ -426,8 +563,22 @@ p {
     grid-column: 1/3;
     grid-row: 6/7;
   }
+  .skill-per-ph {
+    width: 70%;
+  }
+  .skill-per-ai {
+    width: 70%;
+  }
+  .skill-per-figma {
+    width: 30%;
+  }
+  .skill-per-html {
+    width: 60%;
+  }
+  .skill-per-css {
+    width: 40%;
+  }
 }
-
 @media screen and (max-width: 768px) {
   .container {
     width: 100%;
@@ -435,35 +586,133 @@ p {
     padding: 16px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-rows: 200px, 1fr;
     gap: 16px;
-    height: 100%;
   }
   .name-box {
+    grid-column: 1/2;
     grid-row: 1/2;
   }
   .education-box {
+    grid-column: 1/2;
     grid-row: 2/3;
   }
-  .photo-box {
-    grid-row: 1/2;
-  }
   .aboutme-box {
+    grid-column: 1/2;
     grid-row: 3/4;
   }
   .experience-box {
+    grid-column: 1/2;
     grid-row: 5/6;
   }
   .skill-box {
+    grid-column: 1/2;
     grid-row: 6/7;
   }
   .license-box {
+    grid-column: 1/2;
     grid-row: 7/8;
   }
   .contact-box {
+    grid-column: 1/2;
     grid-row: 8/9;
   }
   .portfolio-box {
+    grid-column: 1/2;
     grid-row: 9/10;
   }
+  .photo-box {
+    display: none;
+  }
+  .text-wrap {
+    font-size: 16px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .info-text > h3 {
+    font-size: 16px;
+  }
+  .info-text > p {
+    font-size: 16px;
+  }
+  .education-text > p {
+    font-size: 16px;
+  }
+  .aboutme-me {
+    font-size: 16px;
+  }
+  .aboutme-strong {
+    font-size: 16px;
+  }
+  .experience-item {
+    font-size: 16px;
+  }
+  .experience-strong {
+    font-size: 16px;
+  }
+  .skill-item {
+    font-size: 16px;
+  }
+  .skill-per-box {
+    height: 20px;
+  }
+  .skill-per-ph {
+    width: 70%;
+  }
+  .skill-per-ai {
+    width: 70%;
+  }
+  .skill-per-figma {
+    width: 30%;
+  }
+  .skill-per-html {
+    width: 60%;
+  }
+  .skill-per-css {
+    width: 40%;
+  }
+}
+.green-box:hover::after {
+  animation: shine 0.8s ease;
+}
+.green-box:hover {
+  transform: scale(1.03);
+  background: rgba(29, 218, 135, 0.2);
+}
+.green-box:hover .text-wrap {
+  filter: blur(0);
+}
+.green-box:hover .contact-text-container {
+  filter: blur(0);
+}
+.green-box:hover .profile {
+  filter: blur(0);
+}
+.green-box:hover .aboutme-me {
+  filter: blur(0);
+}
+.green-box:hover .aboutme-strong {
+  filter: blur(0);
+}
+.green-box:hover .experience-item {
+  filter: blur(0);
+}
+.green-box:hover .experience-strong {
+  filter: blur(0);
+}
+.green-box:hover .result {
+  filter: blur(0);
+}
+.green-box:hover .skill-item {
+  filter: blur(0);
+}
+.green-box:hover .skill-per-box {
+  filter: blur(0);
+}
+.green-box:hover .license-item {
+  filter: blur(0);
+}
+.green-box:hover .coming-soon {
+  filter: blur(0);
 }
