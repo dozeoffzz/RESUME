@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="indexstyles.css" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/indexstyles.css" />
     <title>resume</title>
   </head>
   <body>
@@ -31,43 +31,56 @@
           <p>[이스트캠프] 오르미 프론트엔드 부트캠프</p>
         </div>
       </div>
-      <div class="green-box photo-box"><img src="./최원희 사진.jpg" alt="profile" width="556px" height="696px" /></div>
+      <div class="green-box photo-box">
+        <span class="title">WON HEE CHOI</span>
+        <img src="./assets-img/최원희 사진.jpg" alt="profile" class="profile" />
+      </div>
       <div class="green-box aboutme-box">
         <h2 class="title aboutme">ABOUT ME</h2>
-        <p>
-          인테리어디자인 회사에서 현장 감리 업무를 맡으며 다양한 공간 설계와 동선을 관찰하고 관리하는 일을
-          경험했습니다.<br />
-          하지만 내가 좋아하고 있는 일을 하고 있는 걸까? 라는 생각을 자주 하게 되었고 나는 디자인을 하고 싶다는 결과에
-          도달했습니다.<br />
-          그러던 중 홈페이지를 제작하고 관리하는 웹디자이너, 프론트엔드 개발자에 흥미가 생겼습니다.<br />
-        </p>
-        <strong>
-          사용자에게 특별한 경험을 전달하는, 트렌드를 개척하고 따라가는 프론트엔드 개발자가 되고자 합니다.</strong
-        >
+        <div class="aboutme-text-wrap">
+          <p class="aboutme-me">
+            인테리어디자인 회사에서 현장 감리 업무를 맡으며 다양한 공간 설계와 동선을 관찰하고 관리하는 일을
+            경험했습니다.<br />
+            사람들을 많이 만나고, 소통이 중요한 역할이었던 만큼 힘들기도 했지만 날마다 변화하는 현장을 보고 있으면 뿌듯하기도 했습니다.
+            하지만 내가 좋아하는 일을 하고 있는 걸까? 라는 생각을 자주 하게 되었고, 타인의 생각을 읽고, 배려하며 살고 있는 내가 정작 나에 대해서는 잘 모른다는 
+            것을 알게 되었습니다.</br> 세상 모든 것은 디자인과 연결되어 있다는 생각을 하고 있던 저는 디자인을 해야겠다는 결과에
+            도달했습니다.<br />
+            그러던 중 홈페이지를 제작하고 관리하는 웹디자이너, 프론트엔드 개발자에 흥미가 생겼습니다.<br />
+            디자인부터 html, css, javascript등 필요한 역량을 키워나가
+          </p>
+          <strong class="aboutme-strong">
+            사용자에게 특별한 경험을 전달하는, 트렌드를 앞서가고 뒤처지지 않는 프론트엔드 개발자가 되고자
+            합니다.</strong
+          >
+        </div>
       </div>
       <div class="green-box experience-box">
         <h2 class="title experience">EXPERIENCE</h2>
         <ul class="text-wrap">
           <li class="years">2020</li>
-          <li>대한민국 수공예 문화상품 공모대전<strong>특별상</strong></li>
+          <li class="experience-item">대한민국 수공예 문화상품 공모대전<strong>특별상</strong></li>
           <li class="years">2022</li>
-          <li>제 41회 대한민국디자인문화대전 전국공모전<strong>특선</strong></li>
-          <li>제 8회 전국한색 스마트폰 공간사진 공모전<strong>특선</strong></li>
-          <li>제 17회 한국공간디자인 전국공모전<strong>입선</strong></li>
+          <li class="experience-item">제 41회 대한민국디자인문화대전 전국공모전<strong>특선</strong></li>
+          <li class="experience-item">제 8회 전국한색 스마트폰 공간사진 공모전<strong>특선</strong></li>
+          <li class="experience-item">제 17회 한국공간디자인 전국공모전<strong>입선</strong></li>
           <li class="years">2023</li>
-          <li>제 18회 한국공간디자인 전국공모전<strong>특선</strong></li>
-          <li>제 39회 무등 미술대전<strong>입선</strong></li>
-          <li>대학생 아이디어 발굴 캠프 toyo in 장흥<strong>특별상</strong></li>
+          <li class="experience-item">제 18회 한국공간디자인 전국공모전<strong>특선</strong></li>
+          <li class="experience-item">제 39회 무등 미술대전<strong>입선</strong></li>
+          <li class="experience-item">대학생 아이디어 발굴 캠프 toyo in 장흥<strong>특별상</strong></li>
           <li class="years">2024</li>
-          <li>로컬 크리에이터 양성 아카데미<strong>대상</strong></li>
-          <li>1학기 캡스톤디자인 경진대회<strong>최우수상</strong></li>
-          <li>제 16회 실내디자인협회 주제공모전<strong>입선</strong></li>
-          <li>2학기 캡스톤디자인 경진대회<strong>장려상</strong></li>
-          <li>인테르니앤데코 제 17회 공간디자인대전 AI SPACE CREATION 디자인<strong>특선</strong></li>
+          <li class="experience-item">로컬 크리에이터 양성 아카데미<strong>대상</strong></li>
+          <li class="experience-item">1학기 캡스톤디자인 경진대회<strong>최우수상</strong></li>
+          <li class="experience-item">제 16회 실내디자인협회 주제공모전<strong>입선</strong></li>
+          <li class="experience-item">2학기 캡스톤디자인 경진대회<strong>장려상</strong></li>
+          <li class="experience-item">
+            인테르니앤데코 제 17회 공간디자인대전 AI SPACE CREATION 디자인<strong>특선</strong>
+          </li>
           <li class="years">2025</li>
-          <li>[이스트캠프] 오르미 프론트엔드 부트캠프 11기 ~<strong></strong></li>
+          <li class="experience-item">[이스트캠프] 오르미 프론트엔드 부트캠프 11기 ~<strong></strong></li>
         </ul>
-        <strong>결과를 내기 위해 다양한 공모전과 외부활동 을 통해 경험하고 도전했습니다.</strong>
+        <strong class="experience-strong"
+          >결과를 내기 위해 다양한 공모전과 외부활동 을 통해 경험하고 도전했습니다.</strong
+        >
       </div>
       <div class="green-box skill-box">
         <h2 class="title skill">SKILL</h2>
@@ -75,50 +88,50 @@
           <div class="skill-wrap">
             <p class="skill-item">photoshop</p>
             <div class="skill-per-box">
-              <div class="skill-per-ph"></div>
+              <div class="skill-per-ph skill-per"><span>70%</span></div>
             </div>
           </div>
           <div class="skill-wrap">
             <p class="skill-item">illustrator</p>
             <div class="skill-per-box">
-              <div class="skill-per-ai"></div>
+              <div class="skill-per-ai skill-per"><span>70%</span></div>
             </div>
           </div>
           <div class="skill-wrap">
             <p class="skill-item">figma</p>
             <div class="skill-per-box">
-              <div class="skill-per-figma"></div>
+              <div class="skill-per-figma skill-per"><span>30%</span></div>
             </div>
           </div>
           <div class="skill-wrap">
             <p class="skill-item">html</p>
             <div class="skill-per-box">
-              <div class="skill-per-html"></div>
+              <div class="skill-per-html skill-per"><span>60%</span></div>
             </div>
           </div>
           <div class="skill-wrap">
             <p class="skill-item">css</p>
             <div class="skill-per-box">
-              <div class="skill-per-css"></div>
+              <div class="skill-per-css skill-per"><span>40%</span></div>
             </div>
           </div>
           <div class="skill-wrap">
             <p class="skill-item">javascript</p>
             <div class="skill-per-box">
-              <div class="skill-per-js"></div>
+              <div class="skill-per-js skill-per"></div>
             </div>
           </div>
           <div class="skill-wrap">
             <p class="skill-item">react</p>
             <div class="skill-per-box">
-              <div class="skill-per-react"></div>
+              <div class="skill-per-react skill-per"></div>
             </div>
           </div>
         </div>
       </div>
       <div class="green-box license-box">
         <h2 class="title license">LICENSE</h2>
-        <ul class="text-wrap">
+        <ul class="license-item">
           <li>GTQ 1</li>
           <li>GTQ i 1</li>
           <li>ACP</li>
@@ -126,8 +139,8 @@
           <li>전산응용건축제도기능사</li>
         </ul>
       </div>
-      <div class="green-box contact">
-        <div class="text-wrap">
+      <div class="green-box contact-box">
+        <div>
           <h2 class="title contact">CONTACT</h2>
           <div class="contact-text-container">
             <span class="contact-text-wrap">
@@ -149,8 +162,9 @@
           </div>
         </div>
       </div>
-      <div class="green-box portfolio">
+      <div class="green-box portfolio-box">
         <h2 class="title portfolio">PORTFOLIO</h2>
+        <span class="coming-soon">COMING SOON</span>
       </div>
     </section>
   </body>
