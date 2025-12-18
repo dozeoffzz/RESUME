@@ -46,10 +46,16 @@ p {
   font-size: 20px;
   font-weight: 500;
 }
+span {
+  font-family: "zen serif" "pretendard";
+  font-size: 20px;
+  font-weight: 500;
+}
 .container {
   background-color: #f9f9f6;
   margin: 0 auto;
-  max-width: 1820px;
+  width: 100%;
+  max-width: 1920px;
   padding: 32px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(456px, 1fr));
@@ -165,9 +171,6 @@ p {
   to {
     transform: translateX(0);
   }
-}
-.resume:hover {
-  filter: blur(0);
 }
 .down-icon {
   position: absolute;
@@ -310,16 +313,19 @@ p {
 .aboutme-me {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   text-align: center;
   color: #1f2a44;
   font-family: "zen serif";
   line-height: 1.2em;
+  gap: 20px;
 }
 .aboutme-strong {
   font-size: 20px;
   color: rgba(196, 15, 18, 1);
   text-align: center;
   font-family: "zen serif";
+  line-height: 1.5em;
 }
 .years {
   text-align: center;
@@ -400,28 +406,28 @@ p {
   width: 70%;
 }
 .skill-per-ai {
-  width: 0%;
+  width: 5%;
   transition: width 0.7s;
 }
 .skill-box:hover .skill-per-ai {
   width: 70%;
 }
 .skill-per-figma {
-  width: 0%;
+  width: 5%;
   transition: width 0.3s;
 }
 .skill-box:hover .skill-per-figma {
   width: 30%;
 }
 .skill-per-html {
-  width: 0%;
+  width: 5%;
   transition: width 0.6s;
 }
 .skill-box:hover .skill-per-html {
   width: 60%;
 }
 .skill-per-css {
-  width: 0%;
+  width: 5%;
   transition: width 0.4s;
 }
 .skill-box:hover .skill-per-css {
@@ -455,6 +461,24 @@ p {
   color: #1f2a44;
   text-align: center;
 }
+.resume-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-family: "zen serif";
+  text-shadow: 0 0 5px #1dda87, 0 0 10px #fafafa;
+  background: linear-gradient(to top, #1f3d36, #f9f9f6);
+  height: 30vh;
+  width: 100%;
+}
+.resume-footer > p:first-child {
+  font-size: 30px;
+}
+.resume-footer > p:last-child {
+  font-size: 16px;
+}
 @media screen and (min-width: 1280px) {
   .text-wrap {
     filter: blur(6px);
@@ -462,6 +486,10 @@ p {
   }
   .contact-text-container {
     filter: blur(6px);
+    transition: filter 0.3s ease;
+  }
+  .profile {
+    filter: blur(2px);
     transition: filter 0.3s ease;
   }
   .aboutme-me {
@@ -693,6 +721,7 @@ p {
   cursor: pointer;
   transform: scale(1.03);
   background: rgba(29, 218, 135, 0.2);
+  box-shadow: 0 0 10px #fafafa, 0 0 20px #76e0b2;
 }
 .green-box:hover .text-wrap {
   filter: blur(0);
@@ -704,6 +733,9 @@ p {
   filter: blur(0);
 }
 .green-box:hover .aboutme-strong {
+  filter: blur(0);
+}
+.green-box:hover .profile {
   filter: blur(0);
 }
 .green-box:hover .experience-item {
